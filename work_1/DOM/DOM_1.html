@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple DOM example</title>
+  </head>
+  <body>
+    <p class="iti_1">ここは１番目</p>
+    <p class="iti_2">ここは２番目</p>
+    <p class="iti_3">ここは３番目</p>
+    <p class="iti_4">ここは４番目</p>
+
+    <script>
+      const sect = document.querySelector(".iti_1");
+
+      const para = document.createElement("p");
+      para.textContent = "新しく追加しました";
+      sect.appendChild(para);//ここで、docに追加
+
+      const sect2 = document.querySelector(".iti_4");
+
+      const test = document.querySelector(".iti_4");
+
+      //test.parentNode 親ノードを特定するやつ。
+      //iti_4 の親は、bodyタグ
+      console.log("iti_4の親は：" , test.parentNode);
+
+      //iti_4を削除
+      test.remove();
+
+    </script>
+  </body>
+</html>

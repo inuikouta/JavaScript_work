@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        //inputの参照を保持
+        const item_input = document.querySelector("#item");
+        //buttonの参照を保持
+        const item_button = document.querySelector("button");
+        //ulの参照を保持
+        const shop_ul = document.querySelector("ul");
+
+        //それぞれのcreateタグを保持（li・span・button）
+        const create_li = document.createElement("li");
+        const create_span = document.createElement("span");
+        const create_button = document.createElement("button");
+        create_button.textContent = "Delete";
+
+
+        function shop_action() {
+            text = item_input.value;
+            item_input.value = "";
+
+            create_span.textContent = text;
+            create_li.appendChild(create_span);
+            create_li.appendChild(create_button);
+            shop_ul.appendChild(create_li);
+            }
+
+        item_button.onclick = shop_action;
+    </script>
+  </body>
+</html>

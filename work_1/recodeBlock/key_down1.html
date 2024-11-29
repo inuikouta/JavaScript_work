@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="textBox"><br>
+  <input type="text" value="ここになにか入る" id="test">
+  <script>
+    const testText = document.querySelector("#test");
+    function logKey(event) {
+      console.log(`"${event.key}" を押しました。`);
+      console.log(event.key);
+      testText.value = event.key;
+    }
+    textBox.addEventListener("keydown", logKey);
+  </script>
+</body>
+</html>
